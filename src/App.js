@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { PostItem } from "./components/PostItem";
 import { PostList } from "./components/PostList";
 import MyButton from "./components/UI/button/MyButton";
+import MyInput from "./components/UI/input/MyInput";
 import "./styles/App.css";
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
   return (
     <div className="App">
       <form>
-        <input type="text" placeholder="Заголовок"/>
-        <input type="text" placeholder="Описание"/>
+        <MyInput type="text" placeholder="Заголовок"/>
+        <MyInput type="text" placeholder="Описание"/>
         <MyButton disabled>Создать пост</MyButton>
       </form>
       <PostList posts={posts} title="Список постов" />
