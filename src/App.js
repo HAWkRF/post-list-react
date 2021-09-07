@@ -27,6 +27,7 @@ function App() {
       <form>
         {/* Управл. комп-нт */}
         <MyInput value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Заголовок" />
+        {/* Неуправляемый (некотролируемый) компонент */}
         <MyInput ref={bodyInputRef} type="text" placeholder="Описание" />
         <MyButton onClick={addNewPost}>Создать пост</MyButton>
       </form>
