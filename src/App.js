@@ -12,12 +12,22 @@ function App() {
     { id: 3, title: "Javascript 3", body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, voluptas." },
   ]);
 
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+
+  const addNewPost = (e) => {
+    e.preventDefault();
+    console.log(title);
+
+  }
+
   return (
     <div className="App">
       <form>
-        <MyInput type="text" placeholder="Заголовок"/>
-        <MyInput type="text" placeholder="Описание"/>
-        <MyButton disabled>Создать пост</MyButton>
+        {/* Управл. комп-нт */}
+        <MyInput value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Заголовок" />
+        <MyInput value={description} onChange={e => setDescription(e.target.value)} type="text" placeholder="Описание" />
+        <MyButton onClick={addNewPost}>Создать пост</MyButton>
       </form>
       <PostList posts={posts} title="Список постов" />
     </div>
