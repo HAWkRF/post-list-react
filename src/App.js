@@ -13,12 +13,12 @@ function App() {
   ]);
 
   const [title, setTitle] = useState('');
-  const bodyInputRef = useRef();
+  const [body, setBody] = useState('')
 
   const addNewPost = (e) => {
     e.preventDefault();
     console.log(title);
-    console.log(bodyInputRef.current.value);
+    console.log(body);
 
   }
 
@@ -28,7 +28,7 @@ function App() {
         {/* Управл. комп-нт */}
         <MyInput value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Заголовок" />
         {/* Неуправляемый (некотролируемый) компонент */}
-        <MyInput ref={bodyInputRef} type="text" placeholder="Описание" />
+        <MyInput value={body} onChange={e => setBody(e.target.value)} type="text" placeholder="Описание" />
         <MyButton onClick={addNewPost}>Создать пост</MyButton>
       </form>
       <PostList posts={posts} title="Список постов" />
